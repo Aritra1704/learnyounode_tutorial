@@ -1,35 +1,12 @@
 var mymodule = require('./program6b.js')
 var dir = process.argv[2]
-var ext = '.' + process.argv[3]
+var ext = process.argv[3]
 
     mymodule(dir, ext, function(err, list) {
         if(err)
-            return console.log(err)
+            return console.error('There was an error:', err)
         else
             list.forEach(function(element) {
                 console.log(element)    
-            }, this);
+            });
     })
-
-    
-    // fs.readdir(dir, function(err, files) {
-    //     if(err)
-    //         return console.log(err)
-
-    //     var filecount = files.length
-    //     for(i = 0; i < filecount; i++)
-    //         if(path.extname(files[i]).endsWith("." + process.argv[3]))
-    //             console.log(path.basename(files[i]))
-    // })
-
-    // var folder = process.argv[2]
-    // var ext = '.' + process.argv[3]
-    
-    // fs.readdir(folder, function (err, files) {
-    //   if (err) return console.error(err)
-    //   files.forEach(function (file) {
-    //     if (path.extname(file) === ext) {
-    //       console.log(file)
-    //     }
-    //   })
-    // })
