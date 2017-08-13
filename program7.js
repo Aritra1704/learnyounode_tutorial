@@ -1,22 +1,22 @@
 var http = require('http')
 var url = process.argv[2]
+// var url = 'http://localhost:64477'
+// console.log(url)
 
-const StringBuilder = require('node-stringbuilder');
-    var sb = new StringBuilder('');
     http.get(url, function(response) {
         response.setEncoding('utf8');
 
         response.on('data',function(data){
-            sb.append(data)
-            
+            console.log(data);
         });
         response.on('error', function(err){
             console.error;
         })
     }).on('error', console.error)
-    console.log(sb.tostring());
 
-
+/** LEARN YOU NODE SOLUTION **/
+    // var http = require('http')
+    
     // http.get(process.argv[2], function (response) {
     //   response.setEncoding('utf8')
     //   response.on('data', console.log)
